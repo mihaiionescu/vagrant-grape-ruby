@@ -1,0 +1,10 @@
+.DS_Store
+.tags
+.gemtags
+.tags_sorted_by_file
+.ruby-gemset
+*.sublime-project
+*.sublime-workspace
+/log/*.log
+/log/*/*.log*
+.bundle/*
