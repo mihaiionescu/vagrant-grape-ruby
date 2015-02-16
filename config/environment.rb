@@ -12,6 +12,6 @@ module Dummy
 end
 
 Dummy::Application.configure do |config|
-  config.root = File.dirname(__FILE__)
+  config.root = Dir.pwd
   config.env  = ActiveSupport::StringInquirer.new(env.to_s)
 end
