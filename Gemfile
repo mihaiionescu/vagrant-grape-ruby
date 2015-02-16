@@ -14,7 +14,7 @@ gem "cancan"
 
 #Database gems
 gem "activerecord", ">= 4.0.4", :require => "active_record"
-# gem "pg"
+gem "pg"
 
 # Better console, also used for 'rake console'
 gem "pry"
@@ -22,6 +22,7 @@ gem "pry"
 # Deployment gems
 gem 'rubber'
 gem 'open4'
+gem 'unicorn'
 
 # Development specific gems
 group :development do
