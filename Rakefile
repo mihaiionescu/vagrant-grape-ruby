@@ -15,8 +15,6 @@ DatabaseTasks.database_configuration = YAML.load(File.read(File.join(config_dir,
 # DatabaseTasks.seed_loader = Dummy::Application
 
 task :environment do
-  ActiveRecord::Base.configurations = DatabaseTasks.database_configuration
-  ActiveRecord::Base.establish_connection DatabaseTasks.env.to_sym
 end
 
 load 'active_record/railties/databases.rake'
