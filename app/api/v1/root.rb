@@ -1,6 +1,9 @@
 class Dummy::API::V1::Root < ::Grape::API
   format :json
 
+  # Ensure that all files are loaded before root
+  ["tests"].each { |f| require_relative f}
+
   get "/ping" do
     {
       status: 201,
