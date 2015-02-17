@@ -13,13 +13,10 @@ Dummy::Application.configure do |config|
   config.env  = ActiveSupport::StringInquirer.new(env.to_s)
 end
 
-Dir[File.expand_path('../initializers/*.rb', __FILE__)].each {|f| require f}
-Dir[File.expand_path('../../app/api/namespace.rb', __FILE__)].each {|f| require f}
-Dir[File.expand_path('../../lib/*.rb', __FILE__)].each {|f| require f }
-Dir[File.expand_path('../../app/api/v1/*.rb', __FILE__)].each {|f| require f}
-Dir[File.expand_path('../../app/api/v1/*/*.rb', __FILE__)].each {|f| require f}
-Dir[File.expand_path('../../app/api/*.rb', __FILE__)].each {|f| require f}
-Dir[File.expand_path('../../app/models/*.rb', __FILE__)].each {|f| require f}
+require_all File.expand_path('../initializers', __FILE__)
+require_all File.expand_path('../../lib', __FILE__)
+require_all File.expand_path('../../app/api', __FILE__)
+require_all File.expand_path('../../app/models', __FILE__)
 
 ApplicationServer = Rack::Builder.new {
   
