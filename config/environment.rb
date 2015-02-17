@@ -9,6 +9,11 @@ module Dummy
  module Application
    include ActiveSupport::Configurable
   end
+
+  module API
+    module V1
+    end
+  end
 end
 
 Dummy::Application.configure do |config|
