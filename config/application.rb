@@ -1,6 +1,6 @@
 require File.expand_path('../environment', __FILE__)
 
-env = (ENV['RACK_ENV'].to_sym || :development)
+env = (ENV['RACK_ENV'] || :development).to_sym
 
 module Dummy
   module Application
@@ -17,6 +17,7 @@ Dir[File.expand_path('../initializers/*.rb', __FILE__)].each {|f| require f}
 Dir[File.expand_path('../../app/api/namespace.rb', __FILE__)].each {|f| require f}
 Dir[File.expand_path('../../lib/*.rb', __FILE__)].each {|f| require f }
 Dir[File.expand_path('../../app/api/v1/*.rb', __FILE__)].each {|f| require f}
+Dir[File.expand_path('../../app/api/v1/*/*.rb', __FILE__)].each {|f| require f}
 Dir[File.expand_path('../../app/api/*.rb', __FILE__)].each {|f| require f}
 Dir[File.expand_path('../../app/models/*.rb', __FILE__)].each {|f| require f}
 

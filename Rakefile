@@ -1,6 +1,3 @@
-require 'rake'
-require 'active_record'
-
 require File.expand_path('../config/application', __FILE__)
 
 include ActiveRecord::Tasks
