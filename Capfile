@@ -6,7 +6,7 @@ end
 
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
-env = ENV['RUBBER_ENV'] = ENV['RACK_ENV'] ||= (ENV['RAILS_ENV'] || 'production')
+env = ENV['RUBBER_ENV'] = ENV['RACK_ENV'] ||= (ENV['RAILS_ENV'] || 'vagrant')
 root = File.dirname(__FILE__)
 
 # this tries first as a rails plugin then as a gem
