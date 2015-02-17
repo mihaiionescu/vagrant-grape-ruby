@@ -12,6 +12,10 @@ module Dummy
           }
         end
 
+        get "/ping_auth" do
+          env["warden"].authenticate!
+          'authenticated endpoint'
+        end
       
       end
     end
