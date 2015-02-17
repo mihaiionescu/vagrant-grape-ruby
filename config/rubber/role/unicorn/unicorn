@@ -13,7 +13,7 @@ set -e
 TIMEOUT=${TIMEOUT-600}
 APP_ROOT=<%= current_path %>
 PID=<%= rubber_env.unicorn_pid_file %>
-CMD="<%= "bundle exec unicorn_rails -c #{current_path}/config/unicorn.rb -E #{Rubber.env} -D" %>"
+CMD="<%= "bundle exec unicorn -c #{current_path}/config/unicorn.rb -E #{Rubber.env} -D" %>"
 action="$1"
 set -u
 
