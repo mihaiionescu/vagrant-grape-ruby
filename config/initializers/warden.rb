@@ -4,7 +4,8 @@ Warden::Strategies.add(:api_token) do
   end
 
   def authenticate!
-    success!
+    instance = AccessToken.find_by_token(params['access_token'].to_s)
+    instance.nil? ? fail : success!(instance)
   end
 end
 
