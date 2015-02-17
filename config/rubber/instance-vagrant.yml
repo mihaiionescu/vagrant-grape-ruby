@@ -43,7 +43,7 @@
   internal_ip: 192.168.70.10
   zone: 
   provider: vagrant
-  platform: linux
+  platform: 
   root_device_type: 
 - volumes: {}
   static_ips: {}
