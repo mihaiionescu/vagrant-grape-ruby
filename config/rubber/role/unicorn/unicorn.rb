@@ -82,6 +82,10 @@ after_fork do |server, worker|
   
   # Here we are establishing the connection after forking worker
   # processes
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.establish_connection
+  # defined?(ActiveRecord::Base) and
+  #   ActiveRecord::Base.establish_connection
+  if defined?(ActiveRecord::Base)
+    ActiveRecord::Base.configurations = YAML.load(File.read(File.join("<%= Rubber.root %>", 'config', 'database.yml'))) and
+    ActiveRecord::Base.establish_connection "<%= Rubber.env %>"
+  end
 end
